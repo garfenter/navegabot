@@ -9,7 +9,7 @@ const
     app = express().use(bodyParser.json()); // creates express http server
 
 const puppeteer = require('puppeteer');
-
+const request = require('request');
 // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
