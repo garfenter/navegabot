@@ -73,6 +73,15 @@ app.get('/webhook', (req, res) => {
 
 function handleMessage(sender_psid, received_message) {
 
+    (async () => {
+        const browser = await puppeteer.launch();
+        const page = await browser.newPage();
+        await page.goto('https://www.google.com');
+        await page.screenshot({path: 'google.png'});
+      
+        await browser.close();
+      })();
+
     let response;
 
     // Check if the message contains text
